@@ -1,0 +1,615 @@
+/* =====================================================================
+   style.css - CV Putri Regina Barus (Tugas 2: Responsif dan Modern)
+   Urutan isi:
+   1. Variabel warna (palet hijau)
+   2. Dasar halaman (body, tipografi, link)
+   3. Navigasi
+   4. Layout section (Flexbox dan Grid)
+   5. Komponen (kartu, tabel, daftar, tombol, form)
+   6. Footer
+   7. Responsif (media queries)
+   ===================================================================== */
+
+
+/* ---------- 1. VARIABEL WARNA ---------- */
+:root {
+    --hijau-utama: #1a7f50;
+    --hijau-tua:   #14532d;
+    --hijau-aksen: #28c872;
+    --hijau-muda:  #d1e7dd;
+    --latar:       #f6fbf8;
+    --putih:       #ffffff;
+    --teks:        #1f2933;
+    --teks-redup:  #52606d;
+    --garis:       #cfe3d8;
+    --radius:      12px;
+    --bayangan:    0 2px 10px rgba(20, 83, 45, 0.08);
+    --tinggi-nav:  72px;
+}
+
+
+/* ---------- 2. DASAR HALAMAN ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: var(--tinggi-nav);   /* ruang untuk navbar fixed-top */
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--teks);
+    background-color: var(--latar);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--hijau-utama);
+}
+
+a:hover {
+    color: var(--hijau-tua);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--hijau-aksen);
+    outline-offset: 2px;
+}
+
+.teks-rata {
+    text-align: justify;
+}
+
+
+/* ---------- 3. NAVIGASI ---------- */
+.nav-hijau {
+    background-color: var(--hijau-utama);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-hijau .navbar-brand,
+.nav-hijau .nav-link {
+    color: var(--putih);
+}
+
+.nav-hijau .nav-link {
+    border-radius: 6px;
+    padding-inline: 0.75rem;
+}
+
+.nav-hijau .nav-link:hover,
+.nav-hijau .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: var(--putih);
+}
+
+.nav-hijau .nav-link.active {
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+.nav-hijau .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-hijau .navbar-toggler-icon {
+    filter: invert(1);   /* ikon hamburger jadi putih */
+}
+
+.nav-hijau .dropdown-item:active {
+    background-color: var(--hijau-utama);
+}
+
+
+/* ---------- 4. LAYOUT ---------- */
+
+/* Pembungkus konten utama */
+.wrap {
+    width: min(1100px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+/* Setiap section diberi jarak dan garis pemisah (pengganti <hr>) */
+.wrap > section {
+    padding-block: 2.5rem;
+    border-bottom: 1px solid var(--garis);
+    scroll-margin-top: var(--tinggi-nav);
+}
+
+.wrap > section:last-child {
+    border-bottom: 0;
+}
+
+.wrap > section > h2 {
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+    border-left: 6px solid var(--hijau-aksen);
+    color: var(--hijau-tua);
+    font-weight: 700;
+}
+
+h3, h4 {
+    color: var(--hijau-tua);
+}
+
+/* --- Beranda: Flexbox --- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-foto {
+    flex: 0 0 auto;
+}
+
+.foto-profil {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--putih);
+    box-shadow: 0 0 0 3px var(--hijau-aksen), var(--bayangan);
+}
+
+.hero-teks {
+    flex: 1;
+    min-width: 0;   /* mencegah teks panjang melebar keluar layar */
+}
+
+.hero-teks h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--hijau-tua);
+}
+
+.sorot {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+.hero-sapaan {
+    color: var(--teks-redup);
+}
+
+/* --- Profil: Grid 2 kolom (konten utama + aside) --- */
+.profil-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.data-pribadi {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+}
+
+.data-pribadi dt {
+    font-weight: 700;
+}
+
+.data-pribadi dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* --- Kartu alasan drakor, pengalaman, keterampilan: Grid --- */
+.grid-alasan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-block: 1.5rem;
+}
+
+.grid-dua {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* --- Sertifikat: Grid otomatis menyesuaikan lebar layar --- */
+.grid-sertifikat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.sertifikat {
+    margin: 0;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sertifikat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(20, 83, 45, 0.15);
+}
+
+.sertifikat img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sertifikat figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--teks-redup);
+}
+
+
+/* ---------- 5. KOMPONEN ---------- */
+
+/* Kartu */
+.kartu {
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    overflow: hidden;
+}
+
+.kartu-judul {
+    margin: 0;
+    padding: 0.75rem 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--putih);
+    background-color: var(--hijau-utama);
+}
+
+.kartu-isi {
+    padding: 1.1rem;
+}
+
+.kartu-isi > :last-child {
+    margin-bottom: 0;
+}
+
+.kartu-drakor {
+    margin-block: 1.5rem;
+}
+
+.kartu-alasan {
+    padding: 1.25rem;
+    text-align: center;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+}
+
+.kartu-alasan .ikon {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.kartu-alasan h3 {
+    margin-block: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.kartu-alasan p {
+    margin: 0;
+    color: var(--teks-redup);
+}
+
+.kartu-pengalaman {
+    padding: 1.25rem;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-left: 5px solid var(--hijau-aksen);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+}
+
+.kartu-pengalaman h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.kartu-pengalaman .periode {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--teks-redup);
+}
+
+.kartu-pengalaman ul {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+}
+
+/* Daftar info (aside) */
+.daftar-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.daftar-info li {
+    padding: 0.7rem 1.1rem;
+    border-bottom: 1px solid var(--garis);
+}
+
+.daftar-info li:last-child {
+    border-bottom: 0;
+}
+
+/* Daftar drakor bernomor */
+.daftar-drakor {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: nomor;
+}
+
+.daftar-drakor li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--garis);
+    counter-increment: nomor;
+}
+
+.daftar-drakor li:last-child {
+    border-bottom: 0;
+}
+
+.daftar-drakor li::before {
+    content: counter(nomor) ".";
+    min-width: 1.5rem;
+    font-weight: 700;
+    color: var(--hijau-utama);
+}
+
+.daftar-drakor .judul-drakor {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Kutipan */
+.kutipan {
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 4px solid var(--hijau-aksen);
+    color: var(--teks-redup);
+    font-style: italic;
+}
+
+.kutipan p {
+    margin: 0;
+}
+
+/* Tabel (Bootstrap + sedikit penyesuaian) */
+.tabel-bungkus {
+    margin-bottom: 1rem;
+    overflow-x: auto;   /* tabel bisa digeser di dalam kotaknya, halaman tidak ikut melebar */
+    border-radius: var(--radius);
+}
+
+.tabel-bungkus table {
+    margin-bottom: 0;
+    background-color: var(--putih);
+}
+
+.tabel-bungkus caption {
+    caption-side: top;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    color: var(--hijau-tua);
+}
+
+table, th, td {
+    vertical-align: middle;
+}
+
+/* Tombol */
+.tombol {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    color: var(--putih);
+    text-decoration: none;
+    background-color: var(--hijau-utama);
+    border: 2px solid var(--hijau-utama);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.tombol:hover {
+    color: var(--putih);
+    background-color: var(--hijau-tua);
+    border-color: var(--hijau-tua);
+    transform: translateY(-2px);
+}
+
+.tombol-garis {
+    color: var(--hijau-utama);
+    background-color: transparent;
+}
+
+.tombol-garis:hover {
+    color: var(--putih);
+}
+
+.tombol-kecil {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+/* Form */
+.form-saran {
+    display: grid;
+    gap: 1.1rem;
+    max-width: 680px;
+    padding: 1.5rem;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+}
+
+.form-saran .form-control:focus,
+.form-saran .form-select:focus {
+    border-color: var(--hijau-aksen);
+    box-shadow: 0 0 0 0.2rem rgba(40, 200, 114, 0.25);
+}
+
+.form-saran .form-check-input:checked {
+    background-color: var(--hijau-utama);
+    border-color: var(--hijau-utama);
+}
+
+.aksi-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+
+/* ---------- 6. FOOTER ---------- */
+.footer {
+    margin-top: 1rem;
+    padding-block: 2rem;
+    color: var(--putih);
+    background-color: var(--hijau-tua);
+}
+
+.footer-isi {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.footer h2 {
+    font-size: 1.2rem;
+}
+
+.footer address {
+    margin: 0;
+}
+
+.footer a:not(.tombol) {
+    color: var(--hijau-muda);
+}
+
+.footer-kanan {
+    text-align: right;
+}
+
+.footer .tombol {
+    color: var(--hijau-tua);
+    background-color: var(--putih);
+    border-color: var(--putih);
+}
+
+.footer .tombol:hover {
+    background-color: var(--hijau-muda);
+    border-color: var(--hijau-muda);
+}
+
+
+/* ---------- 7. RESPONSIF (MEDIA QUERIES) ---------- */
+
+/* Tablet (lebar kurang dari 992px) */
+@media (max-width: 992px) {
+    .profil-grid {
+        grid-template-columns: 1fr;   /* aside pindah ke bawah konten utama */
+    }
+
+    .grid-alasan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (lebar kurang dari 768px) */
+@media (max-width: 768px) {
+    .wrap > section {
+        padding-block: 1.75rem;
+    }
+
+    /* Beranda: foto di atas, teks di bawah, rata tengah */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .foto-profil {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Teks rata kiri supaya mudah dibaca di layar sempit */
+    .teks-rata {
+        text-align: left;
+    }
+
+    .grid-alasan,
+    .grid-dua {
+        grid-template-columns: 1fr;
+    }
+
+    /* Data pribadi: label di atas, isi di bawahnya */
+    .data-pribadi {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .data-pribadi dd {
+        margin-bottom: 0.75rem;
+    }
+
+    .form-saran {
+        padding: 1rem;
+    }
+
+    .footer-isi {
+        flex-direction: column;
+    }
+
+    .footer-kanan {
+        text-align: left;
+    }
+}
+
+/* Layar sangat kecil (lebar kurang dari 480px) */
+@media (max-width: 480px) {
+    .grid-sertifikat {
+        grid-template-columns: 1fr;
+    }
+
+    .daftar-drakor li {
+        flex-wrap: wrap;
+    }
+}
+
+/* Hormati pengguna yang mematikan animasi */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .tombol,
+    .sertifikat {
+        transition: none;
+    }
+}
