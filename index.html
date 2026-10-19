@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Profil pribadi dan Curriculum Vitae (CV) Putri Regina Barus">
+    <meta name="author" content="Putri Regina Barus">
+    <title>CV Putri Regina Barus | Profil Pribadi</title>
+
+    <!-- Bootstrap CSS (CDN, butuh internet) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS buatan sendiri (harus di bawah Bootstrap agar bisa menimpa) -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ===================== HEADER / NAVIGASI ===================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg nav-hijau fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#beranda">PUTRI REGINA BARUS</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuUtama" aria-controls="menuUtama" aria-expanded="false"
+                    aria-label="Buka menu navigasi">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuUtama">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#beranda">BERANDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profil">PROFIL SAYA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pendidikan">PENDIDIKAN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pengalaman">PENGALAMAN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#keterampilan">KETERAMPILAN</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                PRESTASI
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#penghargaan">Penghargaan</a></li>
+                                <li><a class="dropdown-item" href="#sertifikat">Sertifikat</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#saran">SARAN</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Cari">
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================== KONTEN UTAMA ===================== -->
+    <main class="wrap">
+
+        <!-- ---------- BERANDA (Flexbox) ---------- -->
+        <section id="beranda">
+            <div class="hero">
+                <figure class="hero-foto mb-0">
+                    <img src="images/fotoku.jpeg" class="foto-profil"
+                        alt="Foto profil Putri Regina Barus">
+                </figure>
+                <div class="hero-teks">
+                    <h1>Putri Regina Barus</h1>
+                    <p class="lead mb-2">
+                        Mahasiswa <span class="sorot">Sistem Informasi</span>
+                    </p>
+                    <p class="hero-sapaan teks-rata">
+                        Selamat datang di website pribadi saya. Website ini dibuat untuk
+                        memperkenalkan profil, pendidikan, pengalaman, dan kegiatan yang
+                        saya lakukan. Melalui website ini, pengunjung dapat mengenal saya
+                        lebih dekat.
+                    </p>
+                    <a href="#kontak" class="tombol">Hubungi Saya</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- PROFIL SAYA (Grid) ---------- -->
+        <section id="profil">
+            <h2>Profil Saya</h2>
+
+            <div class="profil-grid">
+                <!-- Konten utama -->
+                <div>
+                    <p class="teks-rata">
+                        Nama saya Putri Regina Barus. Saya memiliki minat dalam bidang teknologi
+                        informasi, khususnya pemrograman web, sistem informasi, dan pengembangan
+                        basis data. Saya senang mempelajari teknologi baru dan berbagi pengetahuan
+                        dengan orang lain.
+                    </p>
+
+                    <h3>Data Pribadi</h3>
+                    <dl class="data-pribadi">
+                        <dt>Nama Lengkap</dt>
+                        <dd>Putri Regina Barus</dd>
+
+                        <dt>Tempat, Tanggal Lahir</dt>
+                        <dd>Pematang Pasir, 5 November 2004</dd>
+
+                        <dt>Alamat</dt>
+                        <dd>Semarang, Jawa Tengah, Indonesia</dd>
+
+                        <dt>Email</dt>
+                        <dd><a href="mailto:putrireginabarus051104@gmail.com">putrireginabarus051104@gmail.com</a></dd>
+                    </dl>
+                </div>
+
+                <!-- Konten pendukung (aside) -->
+                <aside class="kartu">
+                    <h3 class="kartu-judul">Sekilas Info</h3>
+                    <ul class="daftar-info">
+                        <li>🎓 Mahasiswa S1</li>
+                        <li>💻 Fokus: Pemrograman Web, Analisis dan perancangan sistem</li>
+                        <li>🎬 Hobi: Nonton Drakor</li>
+                        <li>📍 Semarang</li>
+                    </ul>
+                </aside>
+            </div>
+
+            <h3 class="mt-4">Hobi dan Minat</h3>
+            <p class="teks-rata">
+                Salah satu minat saya adalah mempelajari pemrograman web. Dalam pengembangan
+                website, HTML digunakan untuk menyusun struktur halaman, CSS untuk mengatur
+                tampilan, dan Bootstrap untuk membantu membuat desain yang responsif.
+            </p>
+            <p class="teks-rata">
+                Selain itu, saya tertarik pada pengembangan aplikasi yang mudah digunakan,
+                memiliki tampilan menarik, dan dapat diakses melalui berbagai perangkat,
+                seperti komputer, tablet, dan telepon seluler.
+            </p>
+
+            <!-- Hobi: Menonton Drama Korea -->
+            <div class="kartu kartu-drakor">
+                <h3 class="kartu-judul">🎬 Menonton Drama Korea (Drakor)</h3>
+                <div class="kartu-isi">
+                    <p class="teks-rata">
+                        Di luar dunia pemrograman, hobi saya adalah menonton drama Korea.
+                        Bagi saya, drakor bukan sekadar hiburan. Alur ceritanya yang rapi,
+                        emosi yang kuat, sinematografi yang indah, dan pesan moral di setiap
+                        episodenya sering membuat saya terinspirasi. Menonton drakor juga
+                        menjadi cara saya melepas penat setelah belajar dan mengerjakan tugas.
+                    </p>
+                    <p class="teks-rata">
+                        Dari drakor, saya juga belajar tentang kerja keras, persahabatan,
+                        keluarga, dan pantang menyerah, nilai-nilai yang bisa saya terapkan
+                        dalam kehidupan sehari-hari maupun dalam belajar teknologi informasi.
+                    </p>
+
+                    <h4 class="h6">Drakor Favorit Saya</h4>
+                    <ol class="daftar-drakor">
+                        <li>
+                            <span class="judul-drakor">Crash Landing on You</span>
+                            <span class="badge text-bg-danger rounded-pill">Romantis</span>
+                        </li>
+                        <li>
+                            <span class="judul-drakor">Strong Woman Do Bong-soon</span>
+                            <span class="badge text-bg-warning rounded-pill">Komedi</span>
+                        </li>
+                        <li>
+                            <span class="judul-drakor">The Glory</span>
+                            <span class="badge text-bg-dark rounded-pill">Thriller</span>
+                        </li>
+                        <li>
+                            <span class="judul-drakor">Hospital Playlist</span>
+                            <span class="badge text-bg-info rounded-pill">Slice of Life</span>
+                        </li>
+                        <li>
+                            <span class="judul-drakor">Weightlifting Fairy Kim Bok-joo</span>
+                            <span class="badge text-bg-success rounded-pill">Kehidupan Kampus</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Kartu alasan menyukai drakor (Grid 3 kolom) -->
+            <div class="grid-alasan">
+                <article class="kartu-alasan">
+                    <div class="ikon">💛</div>
+                    <h3>Cerita Menyentuh</h3>
+                    <p>Alur yang emosional dan karakter yang mudah dikenang.</p>
+                </article>
+                <article class="kartu-alasan">
+                    <div class="ikon">🎨</div>
+                    <h3>Visual Indah</h3>
+                    <p>Sinematografi, lokasi, dan musik latar yang memanjakan mata dan telinga.</p>
+                </article>
+                <article class="kartu-alasan">
+                    <div class="ikon">🌟</div>
+                    <h3>Pesan Positif</h3>
+                    <p>Banyak pelajaran hidup tentang kerja keras dan pantang menyerah.</p>
+                </article>
+            </div>
+
+            <blockquote class="kutipan">
+                <p>Belajar bisa serius, tetapi istirahat dengan nonton drakor juga penting.</p>
+                <p>Karna mengejar mimpi adalah prioritas, menikmati cerita adalah cara mengisi energi.</p>
+            </blockquote>
+        </section>
+
+        <!-- ---------- PENDIDIKAN ---------- -->
+        <section id="pendidikan">
+            <h2>Pendidikan</h2>
+            <p class="teks-rata">
+                Pendidikan merupakan bagian penting dalam meningkatkan pengetahuan dan
+                keterampilan. Melalui pendidikan, seseorang dapat mengembangkan kemampuan
+                berpikir, kreativitas, serta menyelesaikan berbagai permasalahan.
+            </p>
+
+            <!-- Tabel hanya untuk data (bukan untuk layout) -->
+            <div class="tabel-bungkus">
+                <table class="table table-bordered table-hover text-center">
+                    <caption>Riwayat pendidikan formal</caption>
+                    <thead class="table-success">
+                        <tr>
+                            <th scope="col" rowspan="2">No</th>
+                            <th scope="col" rowspan="2">Jenjang</th>
+                            <th scope="col" rowspan="2">Institusi</th>
+                            <th scope="colgroup" colspan="2">Periode</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Masuk</th>
+                            <th scope="col">Lulus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>SMP</td>
+                            <td>SMP Negeri 1 Teluk Mengkudu</td>
+                            <td>2019</td>
+                            <td>2021</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>SMA/SMK</td>
+                            <td>SMA Negeri 1 Teluk Mengkudu</td>
+                            <td>2021</td>
+                            <td>2023</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>S1 Sistem Informasi</td>
+                            <td>
+                                <a href="https://dinus.ac.id" target="_blank" rel="noopener">
+                                    Universitas Dian Nuswantoro
+                                </a>
+                            </td>
+                            <td>2025</td>
+                            <td>Sekarang</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="teks-rata">
+                Saya terus berusaha mengembangkan kemampuan melalui kegiatan belajar,
+                membaca referensi, melakukan praktik pemrograman, dan mengikuti
+                perkembangan teknologi informasi.
+            </p>
+        </section>
+
+        <!-- ---------- PENGALAMAN ---------- -->
+        <section id="pengalaman">
+            <h2>Pengalaman</h2>
+            <p>Berikut pengalaman organisasi dan proyek yang pernah saya ikuti.</p>
+
+            <div class="grid-dua">
+                <article class="kartu-pengalaman">
+                    <h3>Anggota Himpunan Mahasiswa</h3>
+                    <p class="periode">Himpunan Mahasiswa Sistem Informasi | 2025 - sekarang</p>
+                    <ul>
+                        <li>Menjadi panitia dan penyelenggaraan kegiatan dan seminar kampus.</li>
+                        <li>Bekerja sama dengan tim dalam mempersiapkan acara.</li>
+                    </ul>
+                </article>
+
+                <article class="kartu-pengalaman">
+                    <h3>Proyek Website Pribadi</h3>
+                    <p class="periode">Tugas Mata Kuliah Pemrograman Web | 2026</p>
+                    <ul>
+                        <li>Membuat halaman CV statis menggunakan HTML5 dan Bootstrap.</li>
+                        <li>Menerapkan elemen semantik, tabel, daftar, dan form.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ---------- KETERAMPILAN ---------- -->
+        <section id="keterampilan">
+            <h2>Keterampilan</h2>
+            <div class="grid-dua">
+                <div>
+                    <h3 class="h5">Keterampilan Teknis</h3>
+                    <ul>
+                        <li>HTML5 dan CSS3</li>
+                        <li>Bootstrap</li>
+                        <li>Dasar JavaScript</li>
+                        <li>
+                            Basis data
+                            <ul>
+                                <li>MySQL</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="h5">Keterampilan Non-Teknis</h3>
+                    <ol>
+                        <li>Komunikasi</li>
+                        <li>Kerja sama tim</li>
+                        <li>Manajemen waktu</li>
+                        <li>Adaptasi</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- PENGHARGAAN ---------- -->
+        <section id="penghargaan">
+            <h2>Penghargaan dan Prestasi</h2>
+            <p>Berikut kegiatan dan prestasi yang saya peroleh.</p>
+
+            <div class="tabel-bungkus">
+                <table class="table table-bordered">
+                    <thead class="table-success">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Kegiatan</th>
+                            <th scope="col">Peran</th>
+                            <th scope="col">Tahun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Seminar Nasional Kepolisian</td>
+                            <td>Peserta</td>
+                            <td>2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pembekalan Calon Pengurus Himpunan Mahasiswa</td>
+                            <td>Peserta</td>
+                            <td>2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Pelatihan Anggota Paskibra</td>
+                            <td>Anggota</td>
+                            <td>2025</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Skill Boost</td>
+                            <td>Peserta</td>
+                            <td>2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ---------- SERTIFIKAT (Grid) ---------- -->
+        <section id="sertifikat">
+            <h2>Sertifikat</h2>
+            <p>Klik gambar sertifikat untuk melihat ukuran penuh.</p>
+
+            <div class="grid-sertifikat">
+                <figure class="sertifikat">
+                    <a href="images/sertifikat-1.jpeg" target="_blank">
+                        <img src="images/sertifikat-1.jpeg" alt="Sertifikat Seminar Nasional Kepolisian">
+                    </a>
+                    <figcaption>Sertifikat Seminar Nasional Kepolisian</figcaption>
+                </figure>
+                <figure class="sertifikat">
+                    <a href="images/sertifikat-2.jpeg" target="_blank">
+                        <img src="images/sertifikat-2.jpeg" alt="Sertifikat Pembekalan Calon Pengurus Himpunan Mahasiswa">
+                    </a>
+                    <figcaption>Sertifikat Pembekalan Calon Pengurus Himpunan Mahasiswa</figcaption>
+                </figure>
+                <figure class="sertifikat">
+                    <a href="images/sertifikat-3.jpeg" target="_blank">
+                        <img src="images/sertifikat-3.jpeg" alt="Sertifikat Anggota Paskibra">
+                    </a>
+                    <figcaption>Sertifikat Anggota Paskibra</figcaption>
+                </figure>
+                <figure class="sertifikat">
+                    <a href="images/Sertifikat-4.jpeg" target="_blank">
+                        <img src="images/Sertifikat-4.jpeg" alt="Sertifikat Skill Boost">
+                    </a>
+                    <figcaption>Sertifikat Skill Boost</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ---------- FORM SARAN ---------- -->
+        <section id="saran">
+            <h2>Form Saran</h2>
+            <p>Silakan tinggalkan kritik dan saran agar website ini menjadi lebih baik.</p>
+
+            <form class="form-saran" action="#" method="post">
+
+                <div>
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" id="nama" name="nama" class="form-control"
+                        placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control"
+                        placeholder="nama@email.com" required>
+                </div>
+
+                <div>
+                    <label for="tanggal" class="form-label">Tanggal Kunjungan</label>
+                    <input type="date" id="tanggal" name="tanggal" class="form-control">
+                </div>
+
+                <div>
+                    <span class="form-label d-block">Apakah website ini bermanfaat?</span>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="manfaat-ya" name="manfaat" value="ya"
+                            class="form-check-input" checked>
+                        <label for="manfaat-ya" class="form-check-label">Ya</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="manfaat-cukup" name="manfaat" value="cukup"
+                            class="form-check-input">
+                        <label for="manfaat-cukup" class="form-check-label">Cukup</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="manfaat-tidak" name="manfaat" value="tidak"
+                            class="form-check-input">
+                        <label for="manfaat-tidak" class="form-check-label">Belum</label>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="form-label d-block">Bagian yang menurut Anda menarik</span>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" id="minat-profil" name="minat-profil" value="profil"
+                            class="form-check-input">
+                        <label for="minat-profil" class="form-check-label">Profil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" id="minat-hobi" name="minat-hobi" value="hobi"
+                            class="form-check-input">
+                        <label for="minat-hobi" class="form-check-label">Hobi</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" id="minat-sertifikat" name="minat-sertifikat" value="sertifikat"
+                            class="form-check-input">
+                        <label for="minat-sertifikat" class="form-check-label">Sertifikat</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="kategori" class="form-label">Kategori</label>
+                    <select id="kategori" name="kategori" class="form-select">
+                        <option value="tampilan">Tampilan</option>
+                        <option value="konten">Konten</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="pesan" class="form-label">Saran</label>
+                    <textarea id="pesan" name="pesan" class="form-control" rows="4"
+                        placeholder="Tuliskan saran Anda di sini" required></textarea>
+                </div>
+
+                <div class="aksi-form">
+                    <button type="submit" class="tombol">Kirim</button>
+                    <button type="reset" class="tombol tombol-garis">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ---------- PENUTUP ---------- -->
+        <section id="penutup">
+            <h2>Penutup</h2>
+            <p class="teks-rata">
+                Demikian perkenalan singkat tentang diri saya. Semoga website ini dapat
+                memberikan informasi yang bermanfaat bagi pengunjung. Terima kasih telah
+                mengunjungi website saya.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER / KONTAK (Flexbox) ===================== -->
+    <footer id="kontak" class="footer">
+        <div class="wrap footer-isi">
+            <div>
+                <h2>Kontak</h2>
+                <address>
+                    No Hp 083196521843<br>
+                    Putri Regina Barus<br>
+                    Semarang, Jawa Tengah<br>
+                    Email: <a href="mailto:putrireginabarus051104@gmail.com">putrireginabarus051104@gmail.com</a>
+                </address>
+            </div>
+            <div class="footer-kanan">
+                <a href="#beranda" class="tombol tombol-kecil">Kembali ke atas</a>
+                <p class="mb-0 mt-3"><small>&copy; 2026 Putri Regina Barus. Hak cipta dilindungi.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (CDN) - untuk navbar collapse dan dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
